@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react'
 import HeaderComponent from './Components/HeaderComponent';
+import Helmet from 'react-helmet';
+import LoginFormComponent from "./Components/LoginForm";
 
 class App extends React.Component {
 
@@ -9,21 +11,9 @@ class App extends React.Component {
   {
     return (
         <div className="App">
-          <HeaderComponent userAuthority={'professor'}/>
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo"/>
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
+            <Helmet bodyAttributes={{style: 'background-color : #16D2CB'}}/>
+            <HeaderComponent userAuthority={'test'}/>
+            <LoginFormComponent/>
         </div>
     );
   }
