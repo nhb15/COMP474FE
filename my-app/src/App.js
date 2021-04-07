@@ -4,6 +4,8 @@ import React from 'react'
 import HeaderComponent from './Components/HeaderComponent';
 import Helmet from 'react-helmet';
 import LoginFormComponent from "./Components/LoginForm";
+import ScheduleFormComponent from "./Components/ScheduleFormComponent";
+import ScheduleButtonComponent from "./Components/ScheduleButtonComponent";
 
 class App extends React.Component {
 
@@ -14,6 +16,8 @@ class App extends React.Component {
             <Helmet bodyAttributes={{style: 'background-color : #16D2CB'}}/>
             <HeaderComponent userAuthority={'test'}/>
             <LoginFormComponent/>
+            <ScheduleFormComponent/>
+            <ScheduleButtonComponent label={"Monday"}/>
         </div>
     );
   }

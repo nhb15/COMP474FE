@@ -7,10 +7,10 @@ function LoginFormComponent(props) {
     return (
         <form>
             <div>
-                <TextBoxComponent label={'Email'} id={'username'}/>
+                <TextBoxComponent label={'Email'} id={'username'} preValue={'Username'}/>
             </div>
             <div>
-                <TextBoxComponent label={'Password'} id={'password'}/>
+                <TextBoxComponent label={'Password'} id={'password'} preValue={'Password'}/>
             </div>
             <input type="submit" value="Login" onChange={onChangeFunction}/>
         </form>
