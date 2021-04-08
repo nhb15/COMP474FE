@@ -28,3 +28,15 @@ input[type=submit] {
   justify-self: center;
   background-color: #3CBC8D;
 }
+
+input[type=button] {
+  width: 10%;
+  height: 40px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  justify-content: center;
+}
+
+label {
+  font-weight: bold;
+}

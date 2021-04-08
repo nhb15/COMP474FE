@@ -1,5 +1,6 @@
 import React from 'react'
 import TextBoxComponent from "./TextBoxComponent";
+import ScheduleButtonComponent from "./ScheduleButtonComponent";
 
 function ScheduleFormComponent(props) {
     const { professorId } = props;
@@ -16,10 +17,35 @@ function ScheduleFormComponent(props) {
                 <TextBoxComponent label={'End Time'} id={'endTime'} preValue={'12:30 PM'}/>
             </div>
             <div>
-                <TextBoxComponent label={'Day of the Week'} id={'weekDay'} preValue={'Monday(s)'}/>
+                <label>Day(s)</label>
             </div>
             <div>
-                <TextBoxComponent label={'Month'} id={'month'} preValue={'May'}/>
+                <ScheduleButtonComponent label={"Sunday"}/>
+                <ScheduleButtonComponent label={"Monday"}/>
+                <ScheduleButtonComponent label={"Tuesday"}/>
+                <ScheduleButtonComponent label={"Wednesday"}/>
+                <ScheduleButtonComponent label={"Thursday"}/>
+                <ScheduleButtonComponent label={"Friday"}/>
+                <ScheduleButtonComponent label={"Saturday"}/>
+            </div>
+            <div>
+                <label>Month(s)</label>
+            </div>
+            <div>
+                <ScheduleButtonComponent label={"January"}/>
+                <ScheduleButtonComponent label={"February"}/>
+                <ScheduleButtonComponent label={"March"}/>
+                <ScheduleButtonComponent label={"April"}/>
+                <ScheduleButtonComponent label={"May"}/>
+                <ScheduleButtonComponent label={"June"}/>
+            </div>
+            <div>
+                <ScheduleButtonComponent label={"July"}/>
+                <ScheduleButtonComponent label={"August"}/>
+                <ScheduleButtonComponent label={"September"}/>
+                <ScheduleButtonComponent label={"October"}/>
+                <ScheduleButtonComponent label={"November"}/>
+                <ScheduleButtonComponent label={"December"}/>
             </div>
             <div>
                 <TextBoxComponent label={'Number of Students Allowed'} id={'numStudents'} preValue={'3'}/>

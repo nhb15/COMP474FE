@@ -6,6 +6,7 @@ import Helmet from 'react-helmet';
 import LoginFormComponent from "./Components/LoginForm";
 import ScheduleFormComponent from "./Components/ScheduleFormComponent";
 import ScheduleButtonComponent from "./Components/ScheduleButtonComponent";
+import CalendarComponent from "./Components/CalendarComponent";
 
 class App extends React.Component {
 
@@ -17,7 +18,7 @@ class App extends React.Component {
             <HeaderComponent userAuthority={'test'}/>
             <LoginFormComponent/>
             <ScheduleFormComponent/>
-            <ScheduleButtonComponent label={"Monday"}/>
+            <CalendarComponent/>
         </div>
     );
   }
