@@ -6,7 +6,7 @@ function GridSquareCalendarComponent(props) {
 
     return (
         <svg>
-            <rect width="100" height="100" style={{fill: "white", stroke:'#000000'}} />
+            <rect width="300" height="500" style={{fill: "white", stroke:'#000000'}} />
         </svg>
     )
 }
