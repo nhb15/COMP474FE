@@ -24,18 +24,4 @@ function App() {
         </div>
     );
 }
-// render()
-//   {
-//     return (
-//         <div className="App">
-//             <Helmet bodyAttributes={{style: 'background-color : #16D2CB'}}/>
-//             <HeaderComponent userAuthority={'test'}/>
-//             <LoginFormComponent/>
-//             <ScheduleFormComponent/>
-//             <CalendarComponent/>
-//         </div>
-//     );
-//   }
-// }
-//
 export default App;
