@@ -19,7 +19,6 @@ function LoginFormComponent(props) {
         const payload = {
             emailId: email,
             password: password,
-            JSESSIONID: 'C20A782873A99217EA2EF680CB2CD1E5',
         };
 
         const requestOptions = {
@@ -29,9 +28,11 @@ function LoginFormComponent(props) {
                 'Content-Type': 'application/json',
                 'cookie': cookie,
             },
-            body: JSON.stringify(payload),
+            // body: JSON.stringify(payload),
             credentials: 'include',
         };
+
+        console.log(requestOptions.body);
 
         fetch('http://localhost:8080/login', requestOptions)
             .then(response=> response.text())
