@@ -5,6 +5,7 @@ import NavComponent from './Components/NavComponent.js'
 import HeaderComponent from './Components/HeaderComponent';
 import Helmet from 'react-helmet';
 import LoginFormComponent from "./Components/LoginForm";
+import RegisterFormComponent from "./Components/RegisterForm";
 import ScheduleFormComponent from "./Components/ScheduleFormComponent";
 import ScheduleButtonComponent from "./Components/ScheduleButtonComponent";
 import CalendarComponent from "./Components/CalendarComponent";
@@ -17,8 +18,9 @@ function App() {
                 <Router>
                     <Route exact path='/' component={LoginFormComponent}/>
                     <Route path='/login' component={LoginFormComponent}/>
+                    <Route path='/register' component={RegisterFormComponent}/>
                     <Route path='/calendar' component={CalendarComponent}/>
-                    <Route path='/schedule/create' component={ScheduleFormComponent}/>
+                    <Route path='/schedule' component={ScheduleFormComponent}/>
                     {/*<Route path='/schedule' component={Schedule}/>*/}
                 </Router>
         </div>

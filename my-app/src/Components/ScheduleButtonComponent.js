@@ -12,7 +12,7 @@ function ScheduleButtonComponent(props) {
     // }
 
     return (
-        <input type="button" value={label} onClick={() => toggleClickStatus(!clickStatus)} style={{ backgroundColor: clickStatus ? '#FF002A' : '#F1FF00' }}/>
+        <input type="button" value={label} id={label} onClick={() => toggleClickStatus(!clickStatus)} style={{ backgroundColor: clickStatus ? '#FF002A' : '#F1FF00' }}/>
     );
 }
 

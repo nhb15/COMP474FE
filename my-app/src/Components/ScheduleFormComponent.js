@@ -5,6 +5,28 @@ import ScheduleButtonComponent from "./ScheduleButtonComponent";
 function ScheduleFormComponent(props) {
     const { professorId } = props;
     console.log(professorId);
+
+    function onSubmitFunction(e) {
+        e.preventDefault();
+        console.log(e);
+        const scheduleName = document.getElementById('scheduleName').value
+        const startTime = document.getElementById('startTime').value
+        const endTime = document.getElementById('endTime').value
+        const button = document.getElementById('Sunday').value
+
+        console.log(scheduleName, startTime, endTime, button);
+
+        const requestOptions = {
+            method: 'GET',
+            redirect: 'follow',
+        };
+
+        fetch('', requestOptions)
+            .then(response=> response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+    }
+
     return (
         <form>
             <div>
@@ -51,7 +73,7 @@ function ScheduleFormComponent(props) {
                 <TextBoxComponent label={'Number of Students Allowed'} id={'numStudents'} preValue={'3'}/>
             </div>
             <div>
-                <input type="submit" value="Submit"/>
+                <input type="submit" value="Submit" onClick={(e) => onSubmitFunction(e)}/>
             </div>
         </form>
     );

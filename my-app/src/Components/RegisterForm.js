@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import TextBoxComponent from "./TextBoxComponent";
 
-function LoginFormComponent(props) {
+function RegisterFormComponent(props) {
     const {  } = props;
 
     // const [email, setEmail] = useState('');
@@ -34,10 +34,10 @@ function LoginFormComponent(props) {
             <div  style={{position:'relative', left:'40%'}}>
                 <TextBoxComponent label={'Password'} id={'password'} preValue={'Password'}/>
             </div>
-            <input type="submit" value="Login" onClick={(e) => onSubmitFunction(e)} style={{width: '100%'}}/>
-            <a href="/register">Register Instead</a>
+            <input type="submit" value="Register" onClick={(e) => onSubmitFunction(e)} style={{width: '100%'}}/>
+            <a href="/login">Login Instead</a>
         </form>
     );
 }
 
-export default LoginFormComponent;
+export default RegisterFormComponent;

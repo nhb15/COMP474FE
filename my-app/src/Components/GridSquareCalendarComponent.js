@@ -2,11 +2,16 @@ import React from 'react';
 
 
 function GridSquareCalendarComponent(props) {
-    const { } = props;
+    const { appointmentId } = props;
+    let fill = "white"
+
+    if (appointmentId) {
+        fill = "blue"
+    }
 
     return (
-        <svg>
-            <rect width="300" height="500" style={{fill: "white", stroke:'#000000'}} />
+        <svg width="200" height="100">
+            <rect width="200" height="100" style={{fill: fill, stroke:'#000000'}} />
         </svg>
     )
 }
