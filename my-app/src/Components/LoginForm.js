@@ -4,6 +4,8 @@ import TextBoxComponent from "./TextBoxComponent";
 function LoginFormComponent(props) {
     const {  } = props;
 
+    const cookie = 'JSESSIONID=C20A782873A99217EA2EF680CB2CD1E5'
+
     // const [email, setEmail] = useState('');
     // const [password, setPassword] = useState('');
 
@@ -13,12 +15,25 @@ function LoginFormComponent(props) {
         const email = document.getElementById('username').value
         const password = document.getElementById('password').value
         console.log(email, password);
+
+        const payload = {
+            emailId: email,
+            password: password,
+            JSESSIONID: 'C20A782873A99217EA2EF680CB2CD1E5',
+        };
+
         const requestOptions = {
             method: 'GET',
             redirect: 'follow',
+            headers: {
+                'Content-Type': 'application/json',
+                'cookie': cookie,
+            },
+            body: JSON.stringify(payload),
+            credentials: 'include',
         };
 
-        fetch('', requestOptions)
+        fetch('http://localhost:8080/login', requestOptions)
             .then(response=> response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
