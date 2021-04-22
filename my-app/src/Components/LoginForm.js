@@ -11,30 +11,19 @@ function LoginFormComponent(props) {
 
     function onSubmitFunction(e) {
         e.preventDefault();
-        console.log(e);
+
         const email = document.getElementById('username').value
         const password = document.getElementById('password').value
-        console.log(email, password);
-
-        const payload = {
-            emailId: email,
-            password: password,
-        };
 
         const requestOptions = {
             method: 'GET',
-            redirect: 'follow',
             headers: {
                 'Content-Type': 'application/json',
-                'cookie': cookie,
+                "Access-Control-Origin": "*",
             },
-            // body: JSON.stringify(payload),
-            credentials: 'include',
         };
 
-        console.log(requestOptions.body);
-
-        fetch('http://localhost:8080/login', requestOptions)
+        fetch('http://localhost:8800/login?email=' + email + '&password='+password, requestOptions)
             .then(response=> response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));

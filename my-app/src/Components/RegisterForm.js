@@ -34,16 +34,14 @@ function RegisterFormComponent(props) {
 
         const requestOptions = {
             method: 'POST',
-            redirect: 'follow',
             headers: {
                 'Content-Type': 'application/json',
-                'cookie': cookie
+                "Access-Control-Origin": "*"
             },
             body: JSON.stringify(payload),
-            credentials: 'include',
         };
 
-        fetch('http://localhost:8800/login', requestOptions)
+        fetch('http://localhost:8800/registration', requestOptions)
             .then(response=> response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
