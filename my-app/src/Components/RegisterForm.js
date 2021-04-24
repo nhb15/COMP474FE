@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
 import TextBoxComponent from "./TextBoxComponent";
+import {useHistory} from 'react-router-dom';
+
 
 function RegisterFormComponent(props) {
-    const {  } = props;
+    const history = useHistory();
+
 
     const cookie = 'JSESSIONID=C20A782873A99217EA2EF680CB2CD1E5';
 
@@ -30,6 +33,7 @@ function RegisterFormComponent(props) {
             firstName: firstName,
             lastName: lastName,
             role: role,
+            dtype: 'User'
         };
 
         const requestOptions = {
@@ -45,6 +49,8 @@ function RegisterFormComponent(props) {
             .then(response=> response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
+
+        history.push('/login');
     }
 
 

@@ -1,10 +1,42 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import CalendarColumnComponent from "./CalendarColumnComponent";
 import GridSquareCalendarComponent from "./GridSquareCalendarComponent";
 import { Column, Row } from 'simple-flexbox';
+import {useHistory} from 'react-router-dom';
+
 
 function CalendarComponent(props) {
     // const {calendar} = props;
+    const [events, setEvents] = useState(null);
+    console.log(props);
+    console.log(window.sessionStorage);
+    useEffect(() => {
+        const email = window.sessionStorage.getItem('email');
+        console.log(email);
+
+        const requestOptions = {
+            method: 'GET',
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+            },
+        };
+
+        fetch('http://localhost:8800/events/byEmail?email=' + email, requestOptions)
+            .then(response=> response.text())
+            .then(result => {
+                console.log(result);
+                if (result) {
+                    setEvents(result);
+                } else {
+                    console.log('failed to fetch calendar test');
+                }
+            })
+            .catch(error => alert(error));
+
+
+    });
+
+    const history = useHistory();
 
     const calendarArray = [];
 

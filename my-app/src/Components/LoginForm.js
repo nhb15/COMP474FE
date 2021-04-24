@@ -1,13 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import TextBoxComponent from "./TextBoxComponent";
+import { withRouter } from "react-router";
+import {useHistory} from 'react-router-dom';
 
 function LoginFormComponent(props) {
-    const {  } = props;
-
-    const cookie = 'JSESSIONID=C20A782873A99217EA2EF680CB2CD1E5'
-
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
+    const history = useHistory({forceRefresh: true});
 
     function onSubmitFunction(e) {
         e.preventDefault();
@@ -25,8 +22,17 @@ function LoginFormComponent(props) {
 
         fetch('http://localhost:8800/login?email=' + email + '&password='+password, requestOptions)
             .then(response=> response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
+            .then(result => {
+                console.log(result);
+                if (result == 'prof' || result == 'student') {
+                    window.sessionStorage.setItem('role', result);
+                    window.sessionStorage.setItem('email', email);
+                    history.push('/calendar');
+                } else {
+                    alert('Your login did not work. Please check your email and password.');
+                }
+            })
+            .catch(error => alert(error));
     }
 
 
