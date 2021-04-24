@@ -21,17 +21,17 @@ function CalendarComponent(props) {
             },
         };
 
-        fetch('http://localhost:8800/events/byEmail?email=' + email, requestOptions)
-            .then(response=> response.text())
-            .then(result => {
-                console.log(result);
-                if (result) {
-                    setEvents(result);
-                } else {
-                    console.log('failed to fetch calendar test');
-                }
-            })
-            .catch(error => alert(error));
+        // fetch('http://localhost:8800/events/byEmail?email=' + email, requestOptions)
+        //     .then(response=> response.text())
+        //     .then(result => {
+        //         console.log(result);
+        //         if (result) {
+        //             setEvents(result);
+        //         } else {
+        //             console.log('failed to fetch calendar test');
+        //         }
+        //     })
+        //     .catch(error => alert(error));
 
 
     });
