@@ -47,10 +47,8 @@ function RegisterFormComponent(props) {
 
         fetch('http://localhost:8800/registration', requestOptions)
             .then(response=> response.text())
-            .then(result => console.log(result))
+            .then(result => history.push('/login'))
             .catch(error => console.log('error', error));
-
-        history.push('/login');
     }
 
 

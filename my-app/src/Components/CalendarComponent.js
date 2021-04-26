@@ -21,7 +21,7 @@ function CalendarComponent(props) {
             },
         };
 
-        // fetch('http://localhost:8800/events/byEmail?email=' + email, requestOptions)
+        // fetch('http://localhost:8800/events/all', requestOptions)
         //     .then(response=> response.text())
         //     .then(result => {
         //         console.log(result);
@@ -32,8 +32,6 @@ function CalendarComponent(props) {
         //         }
         //     })
         //     .catch(error => alert(error));
-
-
     });
 
     const history = useHistory();

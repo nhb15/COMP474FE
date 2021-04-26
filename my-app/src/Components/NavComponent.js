@@ -17,6 +17,10 @@ function NavComponent(props) {
         history.push('/login');
     }
 
+    const role = window.sessionStorage.getItem('role');
+
+    const scheduleButton = (role === 'prof') ? <Nav.Link href='/schedule'>Schedule</Nav.Link> : null;
+
     const loginButton = window.sessionStorage.getItem('email') ?
         <Button variant="outline-info" onClick={onSignOut}>Logout</Button>:
         <Button variant="outline-info">
@@ -28,7 +32,7 @@ function NavComponent(props) {
             <Navbar.Brand href="#home">COMP474 Calendar</Navbar.Brand>
             <Nav className="mr-auto">
                 <Nav.Link href='/calendar'>Calendar</Nav.Link>
-                <Nav.Link href='/schedule'>Schedule</Nav.Link>
+                {scheduleButton}
             </Nav>
             <Form inline>
                 {/*<FormControl type="text" placeholder="Search" className="mr-sm-2"/>*/}
